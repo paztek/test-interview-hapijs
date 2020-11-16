@@ -4,7 +4,7 @@ const Lab = require('@hapi/lab');
 const { expect } = require('@hapi/code');
 const jwt =require('jsonwebtoken');
 
-const { init } = require('../src/lib/server');
+const { init } = require('../../src/lib/server');
 
 const { afterEach, beforeEach, describe, it } = exports.lab = Lab.script();
 
@@ -19,19 +19,17 @@ describe('GET /', () => {
         await server.stop();
     });
 
-    /*
     describe('When not authenticated', () => {
 
         it('returns a HTTP 401', async () => {
             const res = await server.inject({
                 method: 'get',
-                url: '/'
+                url: '/',
             });
 
             expect(res.statusCode).to.equal(401);
         });
     });
-     */
 
     describe('When authenticated', () => {
 
@@ -54,7 +52,7 @@ describe('GET /', () => {
                 url: '/',
                 headers: {
                     Authorization: `Bearer ${token}`,
-                }
+                },
             });
 
             expect(res.statusCode).to.equal(200);
