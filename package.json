@@ -1,0 +1,25 @@
+{
+  "name": "test-interview-hapijs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index",
+    "start:dev": "nodemon src/index",
+    "test": "lab -v **/*.test.js",
+    "test:dev": "fsmonitor -s -p '+*.js' npm test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^20.0.2",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "@hapi/code": "^8.0.2",
+    "@hapi/lab": "^24.1.0",
+    "fsmonitor": "^0.2.4",
+    "nodemon": "^2.0.6"
+  }
+}
